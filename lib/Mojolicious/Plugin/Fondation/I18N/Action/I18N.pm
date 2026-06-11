@@ -6,7 +6,7 @@ use Mojo::Base 'Mojolicious::Plugin::Fondation::Action::Base', -signatures;
 use Mojo::JSON qw(decode_json encode_json);
 
 # ---------------------------------------------------------------------------
-# after_load — called by Fondation Manager for each plugin
+# after_load -- called by Fondation Manager for each plugin
 # ---------------------------------------------------------------------------
 
 sub after_load ($self, $long, $conf, $share_dir) {
@@ -40,12 +40,12 @@ sub after_load ($self, $long, $conf, $share_dir) {
 
     $self->log->debug(sprintf('%s: %d translations loaded', $long, $added));
 
-    # Write merged files after each plugin — last write has everything
+    # Write merged files after each plugin -- last write has everything
     _write_merged($manager);
 }
 
 # ---------------------------------------------------------------------------
-# _write_merged — write merged per-language JSON files to share/i18n/
+# _write_merged -- write merged per-language JSON files to share/i18n/
 # ---------------------------------------------------------------------------
 
 sub _write_merged ($manager) {

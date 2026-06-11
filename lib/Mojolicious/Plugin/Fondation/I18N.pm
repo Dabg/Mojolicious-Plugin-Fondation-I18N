@@ -1,6 +1,6 @@
 package Mojolicious::Plugin::Fondation::I18N;
 
-# ABSTRACT: Fondation I18N plugin — JSON-backed localization for the Fondation ecosystem
+# ABSTRACT: Fondation I18N plugin -- JSON-backed localization for the Fondation ecosystem
 
 use Mojo::Base 'Mojolicious::Plugin', -signatures;
 use Mojo::JSON qw(encode_json);
@@ -45,7 +45,7 @@ C<$app> and exposed via the C<i18n_lexicons> helper.
 At request time, a C<before_dispatch> hook detects the user's language
 (from URL prefix or C<Accept-Language> header) and caches the appropriate
 lexicon reference in C<$c-E<gt>stash('i18n_lexicon')>. The C<l()> helper
-then performs a single hash lookup — no chasing.
+then performs a single hash lookup -- no chasing.
 
 =head2 Client-side JavaScript
 
@@ -111,7 +111,7 @@ Post-load action that scans and merges translation files at startup.
 =cut
 
 # ---------------------------------------------------------------------------
-# fondation_meta — declares itself to Fondation core
+# fondation_meta -- declares itself to Fondation core
 # ---------------------------------------------------------------------------
 
 sub fondation_meta {
@@ -127,7 +127,7 @@ sub fondation_meta {
 }
 
 # ---------------------------------------------------------------------------
-# register — set up hooks, helpers, and routes
+# register -- set up hooks, helpers, and routes
 # ---------------------------------------------------------------------------
 
 sub register ($self, $app, $config) {
@@ -135,7 +135,7 @@ sub register ($self, $app, $config) {
     my $default = $config->{default} // 'en';
     $self->{default} = $default;
 
-    # ── i18n_lexicons helper — exposes translations loaded by Action::I18N ──
+    # ── i18n_lexicons helper -- exposes translations loaded by Action::I18N ──
 
     $app->helper(i18n_lexicons => sub { $app->{i18n_lexicons} //= {} });
 
@@ -150,7 +150,7 @@ sub register ($self, $app, $config) {
         $c->stash(i18n_lexicon => $lexicon);
     });
 
-    # ── l() helper — one hash lookup, no chasing ────────────────────────
+    # ── l() helper -- one hash lookup, no chasing ────────────────────────
     # Overrides the identity fallback from Fondation core.
 
     $app->helper(l => sub {
@@ -160,7 +160,7 @@ sub register ($self, $app, $config) {
         return $lexicon->{$text} // $text;
     });
 
-    # ── languages() helper — get/set current language, refresh cache ─────
+    # ── languages() helper -- get/set current language, refresh cache ─────
 
     $app->helper(languages => sub {
         my $c    = shift;
@@ -173,7 +173,7 @@ sub register ($self, $app, $config) {
         return $c->stash('i18n_lang') // $default;
     });
 
-    # ── i18n_js helper — injects current lexicon as JS object ────────────
+    # ── i18n_js helper -- injects current lexicon as JS object ────────────
     # Overrides the identity fallback from Fondation core.
     # Called by layout via %== i18n_js before any app JS.
 
@@ -212,7 +212,7 @@ sub register ($self, $app, $config) {
 }
 
 # ---------------------------------------------------------------------------
-# _detect_language — parse Accept-Language header, set stash
+# _detect_language -- parse Accept-Language header, set stash
 # ---------------------------------------------------------------------------
 
 sub _detect_language ($self, $c, $config) {

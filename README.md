@@ -34,7 +34,7 @@ them into a single lexicon per language. The merged lexicons are stored on
 At request time, a `before_dispatch` hook detects the user's language
 (from URL prefix or `Accept-Language` header) and caches the appropriate
 lexicon reference in `$c->stash('i18n_lexicon')`. The `l()` helper
-then performs a single hash lookup — no chasing.
+then performs a single hash lookup -- no chasing.
 
 ## Client-side JavaScript
 
