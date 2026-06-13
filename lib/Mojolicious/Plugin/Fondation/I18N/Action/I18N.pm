@@ -57,7 +57,7 @@ sub _write_merged ($manager) {
 
     for my $lang (sort keys %$lexicons) {
         my $file = $out_dir->child("$lang.json");
-        $file->spew(encode_json($lexicons->{$lang}));
+        $file->spurt(encode_json($lexicons->{$lang}));
     }
 }
 
