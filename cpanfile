@@ -1,4 +1,4 @@
-requires 'Mojolicious', '>= 9.0';
+requires 'Mojolicious' => '9.46';
 requires 'Mojolicious::Plugin::Fondation';
 requires 'I18N::LangTags';
 requires 'I18N::LangTags::Detect';
