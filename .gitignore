@@ -1,2 +1,3 @@
-/.build
-/Mojolicious-Plugin-Fondation-I18N-*
+/.build/
+/Mojolicious-Plugin-*-*/
+/*.tar.gz
