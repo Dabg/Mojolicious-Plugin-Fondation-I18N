@@ -1,7 +1,3 @@
-# NAME
-
-Mojolicious::Plugin::Fondation::I18N - JSON-backed internationalization for Fondation
-
 # SYNOPSIS
 
     # myapp.conf
