@@ -9,10 +9,6 @@ use I18N::LangTags::Detect;
 
 our $VERSION = '0.01';
 
-=head1 NAME
-
-Mojolicious::Plugin::Fondation::I18N - JSON-backed internationalization for Fondation
-
 =head1 SYNOPSIS
 
   # myapp.conf
