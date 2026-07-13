@@ -7,7 +7,6 @@ use Mojo::JSON qw(encode_json);
 use I18N::LangTags;
 use I18N::LangTags::Detect;
 
-our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
